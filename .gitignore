@@ -1,0 +1,14 @@
+target/
+*.jar
+*.log
+
+.env
+*.env
+*secret*
+credentials/
+secrets/
+
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

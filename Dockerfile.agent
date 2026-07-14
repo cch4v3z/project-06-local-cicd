@@ -1,0 +1,14 @@
+FROM maven:3.9-eclipse-temurin-8 AS maven8
+FROM docker:29-cli AS docker-cli
+
+FROM jenkins/inbound-agent:jdk17
+
+USER root
+
+COPY --from=docker-cli /usr/local/bin/docker /usr/local/bin/docker
+COPY --from=maven8 /opt/java/openjdk /opt/java8
+COPY --from=maven8 /usr/share/maven /usr/share/maven
+
+RUN ln -s /usr/share/maven/bin/mvn /usr/local/bin/mvn
+
+USER jenkins
