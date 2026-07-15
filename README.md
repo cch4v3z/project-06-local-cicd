@@ -106,3 +106,7 @@ For transmit bandwidth, replace `receive` with `transmit`.
 | Local persistent volumes | Managed block/database storage |
 
 This design demonstrates the same delivery stages locally while avoiding cloud charges.
+
+## Pipeline verification
+
+The complete local CI/CD pipeline was successfully validated with Jenkins, SonarQube, Docker, Kubernetes, Prometheus, and Grafana.
