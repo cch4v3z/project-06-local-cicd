@@ -42,7 +42,9 @@ pipeline {
                         mvn org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
                           -Dsonar.token=$SONAR_AUTH_TOKEN \
                           -Dsonar.projectKey=project06-local \
-                          -Dsonar.projectName="Project 06 Local"
+                          -Dsonar.projectName="Project 06 Local" \
+                          -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml \
+                          -Dsonar.coverage.exclusions=**/DemoWorkshopApplication.java
                     '''
                 }
             }

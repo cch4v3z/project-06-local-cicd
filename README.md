@@ -93,7 +93,7 @@ For transmit bandwidth, replace `receive` with `transmit`.
 ## Security notes
 
 - Do not commit Jenkins agent secrets, SonarQube tokens, API credentials, or `.env` files.
-- The sample application reads optional Twitter credentials from environment variables; it does not include them in Kubernetes manifests.
+- The demo endpoint has no external API credentials or embedded secrets.
 - Rotate any credential that has been copied into a terminal transcript, screenshot, or chat.
 
 ## Local-to-cloud mapping
