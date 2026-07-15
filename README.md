@@ -110,3 +110,23 @@ This design demonstrates the same delivery stages locally while avoiding cloud c
 ## Pipeline verification
 
 The complete local CI/CD pipeline was successfully validated with Jenkins, SonarQube, Docker, Kubernetes, Prometheus, and Grafana.
+
+## Implementation evidence
+
+The following screenshots document the working local pipeline. All services use local addresses and no credentials are included.
+
+| Repository and architecture | Automatic SCM-triggered build |
+|---|---|
+| ![GitHub repository README and pipeline architecture](docs/screenshots/01-github-repository.png) | ![Jenkins build started automatically by an SCM change](docs/screenshots/02-jenkins-scm-trigger.png) |
+
+| Git polling detected the revision | Completed Jenkins pipeline |
+|---|---|
+| ![Jenkins polling log detecting a new Git revision](docs/screenshots/02a-jenkins-polling-log.png) | ![Jenkins pipeline finished successfully](docs/screenshots/03-jenkins-success.png) |
+
+| SonarQube quality gate | Kubernetes workload |
+|---|---|
+| ![SonarQube quality gate passed with full measured coverage](docs/screenshots/04-sonarqube-quality-gate.png) | ![Kubernetes pod and service running in the sample-app namespace](docs/screenshots/05-kubernetes-deployment.png) |
+
+| Grafana monitoring | Deployed application response |
+|---|---|
+| ![Grafana dashboard monitoring the application pod](docs/screenshots/06-grafana-monitoring.png) | ![Application responding successfully over a local Kubernetes port-forward](docs/screenshots/07-application-response.png) |
